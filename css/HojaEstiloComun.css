@@ -1,0 +1,368 @@
+/* --- Importación de fuente --- */
+@font-face {
+  font-family: 'Karla';
+  src: url(fuentes/Karla/static/Karla-Regular.ttf);
+}
+
+/* --- Variables --- */
+:root {
+  /*Border radius*/
+  --radio_mobile : 8px;
+  --radio_pc : 10px;
+
+  /*Tamaño de fuentes*/
+  --texto_mobile: 0.9rem;
+  --titulo_mobile: 2.2rem;
+  --encabezado_mobile: 1.45rem;
+  --boton_mobile: 0.9rem;
+
+  --texto_pc: 0.8rem;
+  --titulo_pc: 2rem;
+  --encabezado_pc: 1.25rem;
+  --boton_pc: 0.7rem;
+
+  /*Paleta principal*/
+  --negro_principal: #13070C;
+  --gris_1: #252122;
+  --gris_2: #423e3f;
+  --blanco: #fff6e2;
+
+  /*Paleta complementaria*/
+  --naranja_1: #f0703d;
+  --naranja_2: #fdb79c;
+  --magenta: #ff4171;
+  --verde: #9ba057;
+  --azul_enlance: #5da5a0;
+}
+
+/* ================== VERSIÓN MÓVIL ================== */
+
+/* --- Ajustes generales --- */
+* {
+  /*Eliminación de márgenes por defecto*/
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  /*Fuente*/
+  font-family: 'Karla', sans-serif;
+}
+
+*::selection {
+  background-color: var(--naranja_2);
+  color: var(--negro_principal);
+}
+
+/* --- Body --- */
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Textos --- */
+p, label, a.external_link, span, h1, h2, h3, h4, h5, h6 {
+  margin: 5px;
+}
+
+p, label, button, a.internal_link, input::placeholder {
+  color: var(--blanco);
+}
+
+p, label, button, a, span {
+  font-size: var(--texto_mobile);
+}
+
+h1 {
+  color: var(--naranja_2);
+  font-size: var(--titulo_mobile);
+  text-align: center;
+}
+
+h2, h3, h4, h5, h6 {
+  color: var(--naranja_1);
+  font-size: var(--encabezado_mobile);
+}
+
+span {
+  font-size: var(--boton_mobile);
+  font-weight: bold;
+  color: var(--blanco);
+}
+
+span.negative {
+  color: var(--magenta);
+}
+
+span.neutral {
+  color: var(--naranja_2)
+}
+
+span.positive {
+  color: var(--verde);
+}
+
+/* --- Header --- */
+header, header > div,
+header > div > nav,
+header > div > nav > a.internal_link,
+header section {
+  display: flex;
+} 
+
+header {
+  padding: 20px;
+  background-color: var(--gris_2);
+  flex-direction: column;
+}
+
+header > div {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header > div > nav {
+  flex-direction: row;
+  justify-content: right;
+  width: 50%;
+}
+
+header > div > nav > a.internal_link {
+  gap: 5px;
+}
+
+header > div > nav > a.internal_link:hover, footer > div > a:hover {
+  /* --- Cambio de icono --- */
+  img.icono {
+    display: none;
+  }
+  img.icono_hover {
+    display: block;
+  }
+}
+
+header section {
+  align-self: center;
+  flex-direction: column;
+}
+
+header section > button {
+  width: 75%;
+  max-width: 400px;
+  align-self: center;
+}
+
+/* --- Efecto de encojer el logo mediante un borde invisible --- */
+img.logo:hover {
+  border: 2px solid transparent;
+}
+
+/* --- Main --- */
+main {
+  background-color: var(--negro_principal);
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- Footer --- */
+footer {
+  padding: 20px;
+  background-color: var(--gris_2);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+footer > a.red_social {
+  width: fit-content;
+}
+
+footer > div {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+/* --- Artículos  y secciones --- */
+article {
+  background-color: var(--gris_1);
+  border-radius: 15px 15px 0 0;
+  margin: 10px 10px 0 10px;
+}
+
+section {
+  background-color: var(--gris_1);
+  border-radius: 15px;
+  margin: 10px;
+}
+
+article, section {
+  padding: 10px;
+  width: 100%;
+}
+
+/* --- Botones y enlaces internos --- */
+button, a.internal_link {
+  background-color: var(--naranja_1);
+  border: none;
+  border-radius: var(--radio_mobile);
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
+  height: fit-content;
+  width: max-content;
+  align-items: center;
+}
+
+button, a {
+  cursor: pointer;
+}
+
+button:hover , a.internal_link:hover {
+  background-color: var(--naranja_2);
+  color: var(--negro_principal);
+}
+
+/* --- Enclaces externos --- */
+a.external_link {
+  color: var(--azul_enlance);
+}
+
+a.external_link:hover {
+  text-decoration: underline;
+}
+
+a.external_link:visited {
+  color: var(--azul_enlance);
+  font-style: italic;
+}
+
+/* --- Inputs --- */
+input {
+  background-color: var(--negro_principal);
+  border: none;
+  border-radius: var(--radio_mobile);
+  padding: 5px;
+  margin: 5px;
+  color: var(--blanco);
+}
+
+input:hover {
+  outline: 2px solid var(--blanco);
+  transition: 0.2s;
+}
+
+input:focus {
+  outline: 2px solid var(--naranja_1);
+}
+
+/* --- Decoraciones --- */
+hr {
+  height: 5px;
+  width: 100%;
+  color: var(--naranja_1);
+  background-color: var(--naranja_2);
+  margin: 0 10px 10px 10px;
+}
+
+/* --- Logo e imágenes --- */
+img.logo {
+  width: 150px;
+}
+
+img.icono_hover {
+  display: none;
+}
+
+footer a.regresar_index {
+  width: 0;
+}
+
+/* --- Iconos --- */
+img.icono, img.icono_hover {
+  width: 25px;
+  height: 25px;
+}
+
+/* ================== VERSIÓN PC ================== */
+
+@media (min-width: 768px) {
+
+/* --- Textos --- */
+p, label, button, a, span {
+  font-size: var(--texto_pc);
+}
+
+h1 {
+  font-size: var(--titulo_pc);
+}
+
+h2, h3, h4, h5, h6 {
+  font-size: var(--encabezado_pc);
+}
+
+/* --- Header --- */
+header {
+  padding: 50px;
+  justify-content: space-between;
+}
+
+header section {
+  flex-direction: row;
+}
+
+/* --- Iconos --- */
+img.icono, img.icono_hover {
+  width: 30px;
+  height: 30px;
+}
+
+/* --- Main --- */
+main {
+    padding: 50px 100px;
+}
+
+/* --- Artículos y secciones --- */
+article {
+  border-radius: 20px 20px 0 0;
+  margin: 20px 20px 0 20px;
+}
+
+section {
+  border-radius: 20px;
+  margin: 20px;
+}
+
+article, section {
+  padding: 20px;
+}
+
+/* --- Botones y enlaces internos --- */
+button, a.internal_link {
+  border-radius: var(--radio_pc);
+  padding: 15px;
+}
+
+/* --- Inputs --- */
+input {
+  border-radius: var(--radio_pc);
+}
+
+header section > input {
+  width: 75%;
+}
+
+/* --- Decoraciones --- */
+hr {
+  margin: 0 20px 20px 20px;
+}
+
+/* --- Logo --- */
+header img.logo {
+  width: 250px;
+}
+
+}
