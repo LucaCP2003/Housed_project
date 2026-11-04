@@ -105,7 +105,7 @@ span.positive {
 header, header > div,
 header > div > nav,
 header > div > nav > a.internal_link,
-header section {
+header .buscar_ofertas {
   display: flex;
 } 
 
@@ -141,12 +141,12 @@ header > div > nav > a.internal_link:hover, footer > div > a:hover {
   }
 }
 
-header section {
+header .buscar_ofertas {
   align-self: center;
   flex-direction: column;
 }
 
-header section > button {
+header .buscar_ofertas > button {
   width: 75%;
   max-width: 400px;
   align-self: center;
@@ -193,13 +193,13 @@ article {
   margin: 10px 10px 0 10px;
 }
 
-section {
+.buscar_ofertas {
   background-color: var(--gris_1);
   border-radius: 15px;
   margin: 10px;
 }
 
-article, section {
+article, .buscar_ofertas {
   padding: 10px;
   width: 100%;
 }
@@ -310,7 +310,7 @@ header {
   justify-content: space-between;
 }
 
-header section {
+header .buscar_ofertas {
   flex-direction: row;
 }
 
@@ -331,12 +331,12 @@ article {
   margin: 20px 20px 0 20px;
 }
 
-section {
+.buscar_ofertas {
   border-radius: 20px;
   margin: 20px;
 }
 
-article, section {
+article, .buscar_ofertas {
   padding: 20px;
 }
 
@@ -351,7 +351,7 @@ input {
   border-radius: var(--radio_pc);
 }
 
-header section > input {
+header .buscar_ofertas > input {
   width: 75%;
 }
 
@@ -363,6 +363,29 @@ hr {
 /* --- Logo --- */
 header img.logo {
   width: 250px;
+}
+
+/* --- Footer --- */
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer nav {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+footer nav a {
+  border-right: 1px solid var(--azul_enlance);
+  border-left: 1px solid var(--azul_enlance);
+  padding: 10px;
+}
+
+footer a.regresar_index {
+  width: fit-content;
 }
 
 }

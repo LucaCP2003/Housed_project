@@ -19,20 +19,16 @@
                     <img class="icono_hover" src="iconos/Iniciar_sesion_oscuro.png">
                     Iniciar Sesión
                 </a>
-                <a class="internal_link">
-                    <img class="icono" src="iconos/buscar_claro.png">
-                    <img class="icono_hover" src="iconos/buscar_oscuro.png">
-                    Buscar Reservas
-                </a>
             </nav>
         </div>
         <h1>Encuentra nuestras ofertas</h1>
-        <section>
+            <form class="buscar_ofertas">
             <input type="text" placeholder="Destino">
-            <input type="date" placeholder="Llegada - Salida">
-            <input type="number" placeholder="Número de personas">
+            <input type="text" placeholder="Fecha de llegada / Form: dd/mm/aaaa" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}">
+            <input type="text" placeholder="Fecha de salida / Form: dd/mm/aaaa" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}"">
+            <input type="number" placeholder="Número de personas" min="1">
             <button type="submit">Buscar ofertas</button>
-        </section>
+            </form>
     </header>
 
     <main>
@@ -111,9 +107,11 @@
             <img class="icono_hover" src="iconos/instagram_oscuro.png" alt="imagen_instagram">
         </a>
       </div>
-      <a class="external_link">Contáctanos</a>
-      <a class="external_link">Términos y condiciones</a>
-      <a class="external_link">Política de privacidad</a>
+      <nav>
+        <a class="external_link">Contáctanos</a>
+        <a class="external_link">Términos y condiciones</a>
+        <a class="external_link">Política de privacidad</a>
+      </nav>
       <a class="regresar_index" href="index.html">
         <img class="logo" src="imagen_empresa/Logo_base_small.png" alt="logo cuadrado">
       </a>
